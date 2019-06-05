@@ -2,7 +2,7 @@
 School project
 
 
-Simple string calculator, 
+Simple string calculator, made for Andoid,,, 
 that takes the equtaion as a string 
 
 
