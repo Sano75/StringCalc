@@ -241,30 +241,35 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public double Calc(String equation) {
-        if(equation.contains("+")) {
-            return processAdd(equation);
-        }
-        if(equation.contains("-")) {
-            return processSubtract(equation);
-        }
-        if(equation.contains("*")) {
-            return processMuliply(equation);
-        }
-        if(equation.contains("%")) {
-            return processModulus(equation);
-        }
-        if(equation.contains("/")) {
-            return processDivide(equation);
-        }
+        try{
+            if(equation.contains("+")) {
+                return processAdd(equation);
+            }
+            if(equation.contains("-")) {
+                return processSubtract(equation);
+            }
+            if(equation.contains("*")) {
+                return processMuliply(equation);
+            }
+            if(equation.contains("%")) {
+                return processModulus(equation);
+            }
+            if(equation.contains("/")) {
+                return processDivide(equation);
+            }
 
-        if(equation.matches("[0-9]+")) {
-            return Double.parseDouble(equation);
-        }
-        if(equation.matches("[0-9].+")) {
-            return Double.parseDouble(equation);
-        }
+            if(equation.matches("[0-9]+")) {
+                return Double.parseDouble(equation);
+            }
+            if(equation.matches("[0-9].+")) {
+                return Double.parseDouble(equation);
+            }
 
-        return Double.NaN;
+            return Double.NaN;
+        } catch (Exception e) {
+            resultTxtV.setText( "Can't handle the equation" );
+        }
+       return Double.NaN;
     }
 
     private double processDivide(String equation) throws  ArithmeticException {
